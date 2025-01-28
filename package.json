@@ -20,12 +20,12 @@
 		"mongodb": "5.5",
 		"mongoose": "^8.9.5",
 		"nodemon": "^3.1.9",
-		"ts-node": "^10.9.2"
-	},
-	"devDependencies": {
+		"ts-node": "^10.9.2",
 		"@types/cors": "^2.8.17",
 		"@types/express": "^5.0.0",
-		"@types/node": "^22.10.10",
+		"@types/node": "^22.10.10"
+	},
+	"devDependencies": {
 		"typescript": "^5.7.3"
 	}
 }
