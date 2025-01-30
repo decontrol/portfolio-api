@@ -2,7 +2,8 @@ import express, { Express, Request, Response } from 'express';
 import mongoose from 'mongoose';
 import 'dotenv/config.js';
 import cors from 'cors';
-import productRoute from './routes/productRoute';
+import jobRouter from './routes/jobRoute';
+import productRouter from './routes/productRoute';
 import { errorMiddleware } from './middleware/errorMiddleware';
 
 const app: Express = express();
@@ -25,7 +26,8 @@ const corsOptions = {
 app.use(cors(corsOptions)); // implemented in productRoute.ts
 
 // Routes
-app.use('/api/v1/products', productRoute);
+app.use('/api/v1/products', productRouter);
+app.use('/api/v1/jobs', jobRouter);
 app.get('/', (req: Request, res: Response) => {
 	res.send('Hello world');
 });
