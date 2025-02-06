@@ -28,6 +28,7 @@ app.use(cors(corsOptions)); // implemented in productRoute.ts
 // Routes
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/jobs', jobRouter);
+
 app.get('/', (req: Request, res: Response) => {
 	res.send('Hello world');
 });

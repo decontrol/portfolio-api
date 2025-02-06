@@ -4,8 +4,8 @@ import Job from '../models/jobModel';
 
 export const getJobs = asyncHandler(async (req: Request, res: Response): Promise<any> => {
 	try {
-		const products = await Job.find({});
-		res.status(200).json(products);
+		const jobs = await Job.find({});
+		res.status(200).json(jobs);
 	} catch (err: unknown) {
 		if (typeof err === 'string') {
 			res.status(500);
@@ -24,12 +24,12 @@ export const getJobs = asyncHandler(async (req: Request, res: Response): Promise
 export const getJob = asyncHandler(async (req: Request, res: Response): Promise<any> => {
 	try {
 		const { id } = req.params;
-		const product = await Job.findById(id);
-		if (!product) {
+		const job = await Job.findById(id);
+		if (!job) {
 			res.status(404);
-			throw new Error(`We could not find any product with ID ${id}`);
+			throw new Error(`We could not find any job with ID ${id}`);
 		}
-		res.status(200).json(product);
+		res.status(200).json(job);
 	} catch (err: unknown) {
 		if (typeof err === 'string') {
 			res.status(500);
@@ -47,8 +47,8 @@ export const getJob = asyncHandler(async (req: Request, res: Response): Promise<
 
 export const addJob = asyncHandler(async (req: Request, res: Response) => {
 	try {
-		const product = await Job.create(req.body);
-		res.status(200).json(product);
+		const job = await Job.create(req.body);
+		res.status(200).json(job);
 	} catch (err: unknown) {
 		if (typeof err === 'string') {
 			res.status(500);
@@ -67,12 +67,12 @@ export const addJob = asyncHandler(async (req: Request, res: Response) => {
 export const updateJob = asyncHandler(async (req: Request, res: Response): Promise<any> => {
 	try {
 		const { id } = req.params;
-		const product = await Job.findByIdAndUpdate(id, req.body, { new: true });
-		if (!product) {
+		const job = await Job.findByIdAndUpdate(id, req.body, { new: true });
+		if (!job) {
 			res.status(404);
-			throw new Error(`We could not find any product with ID ${id}`);
+			throw new Error(`We could not find any job with ID ${id}`);
 		}
-		res.status(200).json(product);
+		res.status(200).json(job);
 	} catch (err: unknown) {
 		if (typeof err === 'string') {
 			res.status(500);
@@ -91,12 +91,12 @@ export const updateJob = asyncHandler(async (req: Request, res: Response): Promi
 export const deleteJob = asyncHandler(async (req: Request, res: Response): Promise<any> => {
 	try {
 		const { id } = req.params;
-		const product = await Job.findByIdAndDelete(id);
-		if (!product) {
+		const job = await Job.findByIdAndDelete(id);
+		if (!job) {
 			res.status(404);
-			throw new Error(`We could not find any product with ID ${id}`);
+			throw new Error(`We could not find any job with ID ${id}`);
 		}
-		res.status(200).json(product);
+		res.status(200).json(job);
 	} catch (err: unknown) {
 		if (typeof err === 'string') {
 			res.status(500);
