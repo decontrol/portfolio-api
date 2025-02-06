@@ -18,7 +18,7 @@ const config = {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // to use form urlencoded option in Insomnia, Postman etc
 const corsOptions = {
-	origin: [config.FRONTEND, 'https://hyungjukwon.netlify.app/'],
+	origin: [config.FRONTEND, 'https://hyungjukwon.netlify.app'],
 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions)); // implemented in productRoute.ts
