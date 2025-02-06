@@ -13,8 +13,6 @@ const config = {
 	PORT: process.env.PORT ? Number(process.env.PORT) : 5000,
 	FRONTEND: process.env.FRONTEND as string,
 };
-const MONGO_URI: string = process.env.MONGO_URI as string;
-const PORT: number = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 // Middleware
 app.use(express.json());
