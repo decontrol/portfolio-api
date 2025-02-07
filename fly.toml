@@ -4,7 +4,7 @@
 #
 
 app = 'portfolio-api-hjk'
-primary_region = 'ewr'
+primary_region = 'yul'
 
 [build]
 
