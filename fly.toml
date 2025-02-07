@@ -4,16 +4,16 @@
 #
 
 app = 'portfolio-api-hjk'
-primary_region = 'ewr'
+primary_region = 'yul'
 
 [build]
 
 [http_service]
   internal_port = 3000
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = true
   auto_start_machines = true
-  min_machines_running = 0
+  min_machines_running = 01
   processes = ['app']
 
 [[vm]]
