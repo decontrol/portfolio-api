@@ -39,7 +39,9 @@ app.use(errorMiddleware);
 
 mongoose.set('strictQuery', false);
 mongoose
-	.connect(config.MONGO_URI!)
+	.connect(config.MONGO_URI!, {
+		maxPoolSize: 10,
+	})
 	.then(() => {
 		console.log('Connected to MongoDB');
 		app.listen(config.PORT, () => {
