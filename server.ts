@@ -21,7 +21,7 @@ const corsOptions = {
 	origin: [config.FRONTEND, 'http://localhost:5173', 'https://hyungjukwon.netlify.app'],
 	optionsSuccessStatus: 200,
 };
-app.use(cors(corsOptions)); // implemented in productRoute.ts
+app.use(cors(corsOptions));
 
 // Routes
 app.use('/api/v1/products', productRouter);
@@ -39,9 +39,7 @@ app.use(errorMiddleware);
 
 mongoose.set('strictQuery', false);
 mongoose
-	.connect(config.MONGO_URI!, {
-		maxPoolSize: 10,
-	})
+	.connect(config.MONGO_URI!)
 	.then(() => {
 		console.log('Connected to MongoDB');
 		app.listen(config.PORT, () => {
